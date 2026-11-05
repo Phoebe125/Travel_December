@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121418" media="(prefers-color-scheme: dark)">
+<title>12월 가족여행 후보지</title>
+<meta name="description" content="12월 첫째 주 3박 4일 가족여행 후보지 3곳(오사카+교토, 후쿠오카+벳푸·유후인, 도쿄+하코네) 비교">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --surface: #ffffff;
+    --surface-2: #faf8f5;
+    --ink: #1d222b;
+    --muted: #677080;
+    --line: #e6e1d9;
+    --shadow: 0 1px 2px rgba(30, 25, 15, .05), 0 6px 20px rgba(30, 25, 15, .07);
+    --osaka: #b8383d;
+    --fukuoka: #157270;
+    --tokyo: #42559e;
+    --osaka-soft: #f8e7e6;
+    --fukuoka-soft: #e2f1f0;
+    --tokyo-soft: #e7eaf7;
+    --accent: var(--osaka);
+    --accent-soft: var(--osaka-soft);
+    --radius: 18px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121418;
+      --surface: #1b1f26;
+      --surface-2: #20252d;
+      --ink: #eceef2;
+      --muted: #9ba4b3;
+      --line: #2c323c;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+      --osaka: #ef8a8c;
+      --fukuoka: #62c6c3;
+      --tokyo: #9aabef;
+      --osaka-soft: #3a2224;
+      --fukuoka-soft: #1a3433;
+      --tokyo-soft: #252b44;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121418;
+    --surface: #1b1f26;
+    --surface-2: #20252d;
+    --ink: #eceef2;
+    --muted: #9ba4b3;
+    --line: #2c323c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    --osaka: #ef8a8c;
+    --fukuoka: #62c6c3;
+    --tokyo: #9aabef;
+    --osaka-soft: #3a2224;
+    --fukuoka-soft: #1a3433;
+    --tokyo-soft: #252b44;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 0 16px 40px; }
+
+  /* ---------- header ---------- */
+  header.top { padding: calc(env(safe-area-inset-top, 0px) + 28px) 0 18px; }
+  .kicker {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 12px;
+    font-family: "Noto Serif KR", "Batang", serif;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    word-break: keep-all;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .chips li {
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  /* ---------- tabs ---------- */
+  .tabs-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0 -16px;
+    padding: calc(env(safe-area-inset-top, 0px) + 8px) 16px 10px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 4px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .tab {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 2px 7px;
+    border-radius: 12px;
+    cursor: pointer;
+    line-height: 1.25;
+    word-break: keep-all;
+    transition: background-color .2s, color .2s;
+  }
+  .tab small { display: block; font-size: 10.5px; font-weight: 500; opacity: .85; margin-top: 1px; }
+  .tab[aria-selected="true"] { background: var(--tab-color, var(--ink)); color: #fff; }
+  :root[data-theme="dark"] .tab[aria-selected="true"] { color: #121418; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tab[aria-selected="true"] { color: #121418; } }
+  .tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  /* ---------- panels ---------- */
+  .panel { padding-top: 8px; }
+  .panel[hidden] { display: none; }
+
+  .hero {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    max-height: 520px;
+    width: 100%;
+    background: var(--line);
+    box-shadow: var(--shadow);
+  }
+  .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.38) 60%, rgba(0,0,0,.82) 100%);
+  }
+  .hero-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 20px 20px 22px; color: #fff; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    margin-bottom: 10px;
+  }
+  .hero h2 {
+    margin: 0 0 6px;
+    font-family: "Noto Serif KR", "Batang", serif;
+    font-size: 30px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 12px rgba(0,0,0,.35);
+  }
+  .hero p { margin: 0 0 14px; font-size: 15px; line-height: 1.55; word-break: keep-all; color: rgba(255,255,255,.92); }
+  .comfort { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; }
+  .dots { display: inline-flex; gap: 5px; }
+  .dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.3); }
+  .dots i.on { background: #fff; }
+
+  /* quick stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 11px 10px 10px;
+    text-align: center;
+  }
+  .stat .k { display: block; font-size: 11.5px; color: var(--muted); margin-bottom: 2px; }
+  .stat .v { display: block; font-size: 15px; font-weight: 800; color: var(--accent); line-height: 1.3; word-break: keep-all; }
+
+  section.block { margin-top: 30px; }
+  .sec-head { display: flex; align-items: baseline; gap: 8px; margin: 0 2px 12px; }
+  .sec-head h3 { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+  .sec-head .num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    color: var(--accent);
+  }
+
+  /* spots */
+  .spots { display: grid; gap: 14px; }
+  .spot {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .spot .ph { position: relative; aspect-ratio: 16 / 10; background: var(--line); display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; }
+  .spot .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .spot .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  :root[data-theme="dark"] .spot .badge { color: #121418; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .spot .badge { color: #121418; } }
+  .spot .tx { padding: 13px 16px 15px; }
+  .spot h4 { margin: 0 0 3px; font-size: 16.5px; font-weight: 800; letter-spacing: -0.01em; word-break: keep-all; }
+  .spot p { margin: 0; color: var(--muted); font-size: 14px; word-break: keep-all; }
+  .spot .warn { color: var(--accent); font-weight: 500; }
+
+  /* info card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  dl.rows { margin: 0; }
+  dl.rows > div {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 12px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--line);
+  }
+  dl.rows > div:first-child { border-top: 0; }
+  dl.rows dt { color: var(--muted); font-size: 13px; padding-top: 1px; }
+  dl.rows dd { margin: 0; word-break: keep-all; }
+  dl.rows > div.hl { background: var(--accent-soft); }
+  dl.rows > div.hl dd b { color: var(--accent); font-weight: 800; }
+
+  /* weather */
+  .weather { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .wx {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 14px 13px;
+  }
+  .wx .place { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+  .wx .temps { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .wx .t { display: flex; flex-direction: column; }
+  .wx .t span { font-size: 11px; color: var(--muted); }
+  .wx .t b { font-size: 21px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+  .wx .t.day b { color: var(--accent); }
+  .wx .t.night b { color: var(--ink); opacity: .75; }
+  .wx .memo { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); word-break: keep-all; line-height: 1.5; }
+
+  .note {
+    display: flex;
+    gap: 8px;
+    margin: 10px 2px 0;
+    font-size: 13px;
+    color: var(--muted);
+    word-break: keep-all;
+    line-height: 1.55;
+  }
+  .note::before { content: "💡"; flex: none; }
+
+  /* ---------- compare ---------- */
+  .cities { display: grid; gap: 12px; }
+  .city {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+  }
+  .city img { width: 100%; height: 100%; min-height: 128px; object-fit: cover; }
+  .city .in { padding: 12px 14px; border-left: 4px solid var(--c); }
+  .city h4 { margin: 0 0 6px; font-size: 16px; font-weight: 800; color: var(--c); word-break: keep-all; }
+  .city ul { margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .city ul b { color: var(--ink); font-weight: 700; }
+  .city .go { display: inline-block; margin-top: 4px; font-size: 12px; font-weight: 700; color: var(--c); }
+
+  .scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .swipe-hint { font-size: 12px; color: var(--muted); margin: 0 2px 8px; }
+  table.cmp { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 620px; font-size: 13.5px; }
+  .cmp th, .cmp td { padding: 10px 12px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); word-break: keep-all; }
+  .cmp thead th { border-top: 0; font-weight: 800; font-size: 14px; }
+  .cmp thead th.o { color: var(--osaka); }
+  .cmp thead th.f { color: var(--fukuoka); }
+  .cmp thead th.t { color: var(--tokyo); }
+  .cmp tbody th { font-weight: 500; color: var(--muted); width: 84px; position: sticky; left: 0; background: var(--surface); z-index: 1; border-right: 1px solid var(--line); }
+  .cmp thead th:first-child { position: sticky; left: 0; background: var(--surface); z-index: 1; border-right: 1px solid var(--line); }
+  .cmp tr.group th, .cmp tr.group td { background: var(--surface-2); font-weight: 800; font-size: 12.5px; color: var(--ink); padding: 7px 12px; }
+
+  .verdict { display: grid; gap: 10px; }
+  .verdict > div {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px 14px 18px;
+    word-break: keep-all;
+    overflow: hidden;
+  }
+  .verdict > div::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
+  .verdict b { color: var(--c); display: block; font-size: 14px; margin-bottom: 2px; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12.5px; word-break: keep-all; }
+  footer p { margin: 0 0 12px; }
+  details.credits summary { cursor: pointer; font-weight: 700; color: var(--ink); padding: 4px 0; }
+  details.credits ul { margin: 8px 0 0; padding-left: 16px; line-height: 1.7; }
+  details.credits a { color: inherit; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .panel:not([hidden]) { animation: rise .28s ease-out; }
+    @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .city { transition: transform .15s; }
+    .city:active { transform: scale(.985); }
+  }
+  @media (min-width: 520px) {
+    .hero { aspect-ratio: 4 / 3; }
+    h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="kicker">FAMILY TRIP · DECEMBER</span>
+    <h1>12월 첫째 주 가족여행,<br>어디로 갈까</h1>
+    <ul class="chips" aria-label="여행 조건">
+      <li>3박 4일</li><li>가족 4명</li><li>인천 출발</li><li>후보지 3곳</li>
+    </ul>
+  </header>
+
+  <div class="tabs-bar">
+    <div class="tabs" role="tablist" aria-label="여행 후보지">
+      <button class="tab" role="tab" id="t-osaka" aria-controls="p-osaka" aria-selected="true" style="--tab-color: var(--osaka)">오사카<small>+ 교토</small></button>
+      <button class="tab" role="tab" id="t-fukuoka" aria-controls="p-fukuoka" aria-selected="false" style="--tab-color: var(--fukuoka)">후쿠오카<small>+ 벳푸·유후인</small></button>
+      <button class="tab" role="tab" id="t-tokyo" aria-controls="p-tokyo" aria-selected="false" style="--tab-color: var(--tokyo)">도쿄<small>+ 하코네</small></button>
+      <button class="tab" role="tab" id="t-compare" aria-controls="p-compare" aria-selected="false">비교<small>한눈에</small></button>
+    </div>
+  </div>
+
+  <main>
+  <!-- ================= 오사카 + 교토 ================= -->
+  <div class="panel" role="tabpanel" id="p-osaka" aria-labelledby="t-osaka" style="--accent: var(--osaka); --accent-soft: var(--osaka-soft)">
+    <div class="hero">
+      <img src="images/arashiyama.jpg" alt="단풍으로 물든 교토 아라시야마의 산과 도게츠교">
+      <div class="hero-body">
+        <span class="hero-tag">추천 · 가장 편한 코스</span>
+        <h2>오사카 + 교토</h2>
+        <p>숙소를 옮기지 않아도 되는, 가장 편한 코스입니다.</p>
+        <div class="comfort">부모님 편의도 <span class="dots" role="img" aria-label="5점 만점에 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="k">비행시간</span><span class="v">약 2시간</span></div>
+      <div class="stat"><span class="k">4인 항공권</span><span class="v">60~100만</span></div>
+      <div class="stat"><span class="k">숙소 이동</span><span class="v">없음</span></div>
+    </div>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">01</span><h3>대표 관광지</h3></div>
+      <div class="spots">
+        <article class="spot">
+          <div class="ph"><span class="badge">1</span><img src="images/osaka-castle.jpg" alt="녹음에 둘러싸인 오사카성 천수각" loading="lazy"><img src="images/dotonbori.jpg" alt="글리코 간판이 보이는 도톤보리 에비스바시" loading="lazy"></div>
+          <div class="tx"><h4>오사카성 · 도톤보리</h4><p>도심 산책과 먹거리 거리</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">2</span><img src="images/kiyomizu.jpg" alt="교토 기요미즈데라 본당 무대" loading="lazy"></div>
+          <div class="tx"><h4>교토 기요미즈데라</h4><p>단풍 명소. <span class="warn">저녁 라이트업은 대기가 깁니다.</span></p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">3</span><img src="images/arashiyama-bamboo.jpg" alt="아라시야마 대나무 숲길" loading="lazy"><img src="images/fushimi-inari.jpg" alt="후시미이나리 신사의 붉은 도리이 길" loading="lazy"></div>
+          <div class="tx"><h4>아라시야마 · 후시미이나리</h4><p>대나무 숲과 붉은 도리이 길</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">4</span><img src="images/nara-park.jpg" alt="나라 공원 연못 위 우키미도 정자" loading="lazy"></div>
+          <div class="tx"><h4>나라 사슴공원</h4><p>부모님과 가볍게 걷기 좋습니다.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">02</span><h3>비행시간 · 항공권</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>비행시간</dt><dd>약 1시간 50분~2시간</dd></div>
+        <div><dt>저가항공</dt><dd>1인 왕복 약 15~25만원</dd></div>
+        <div><dt>대형항공사</dt><dd>1인 왕복 약 35~70만원</dd></div>
+        <div class="hl"><dt>4인 합계</dt><dd><b>약 60~100만원</b> (저가항공 기준)</dd></div>
+      </dl></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">03</span><h3>12월 초 날씨</h3></div>
+      <div class="weather">
+        <div class="wx"><div class="place">오사카</div><div class="temps"><div class="t day"><span>낮</span><b>13~14°</b></div><div class="t night"><span>밤</span><b>5~6°</b></div></div></div>
+        <div class="wx"><div class="place">교토</div><div class="temps"><div class="t day"><span>낮</span><b>13°</b></div><div class="t night"><span>밤</span><b>3°</b></div></div><p class="memo">아침저녁에 더 춥습니다.</p></div>
+      </div>
+      <p class="note">단풍은 11월 하순부터 12월 초순이 절정이라 시기가 맞습니다.</p>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">04</span><h3>숙박 · 교통</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>공항→시내</dt><dd>간사이공항에서 난카이 라피트로 약 40분</dd></div>
+        <div><dt>도시 간 이동</dt><dd>오사카→교토 JR 약 30분</dd></div>
+        <div><dt>숙소</dt><dd>오사카 한 곳에 계속 머물며 교토·나라는 당일치기</dd></div>
+        <div><dt>4인 객실</dt><dd>패밀리룸 또는 트윈 2실</dd></div>
+      </dl></div>
+      <p class="note">이 시기엔 대중교통이 붐비니 하루 2~3곳만 보는 일정이 좋습니다.</p>
+    </section>
+  </div>
+
+  <!-- ================= 후쿠오카 + 벳푸·유후인 ================= -->
+  <div class="panel" role="tabpanel" id="p-fukuoka" aria-labelledby="t-fukuoka" style="--accent: var(--fukuoka); --accent-soft: var(--fukuoka-soft)" hidden>
+    <div class="hero">
+      <img src="images/yufuin.jpg" alt="눈 덮인 유후다케 아래 유후인 온천 마을 거리" style="object-position: center 30%">
+      <div class="hero-body">
+        <span class="hero-tag">온천 · 가장 짧은 비행</span>
+        <h2>후쿠오카 + 벳푸·유후인</h2>
+        <p>비행이 가장 짧고, 온천 료칸에서 하룻밤 쉬어갈 수 있습니다.</p>
+        <div class="comfort">부모님 편의도 <span class="dots" role="img" aria-label="5점 만점에 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="k">비행시간</span><span class="v">약 1시간 30분</span></div>
+      <div class="stat"><span class="k">4인 항공권</span><span class="v">60~100만</span></div>
+      <div class="stat"><span class="k">공항→시내</span><span class="v">5~10분</span></div>
+    </div>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">01</span><h3>대표 관광지</h3></div>
+      <div class="spots">
+        <article class="spot">
+          <div class="ph"><span class="badge">1</span><img src="images/ohori-park.jpg" alt="넓은 호수와 산책로가 있는 오호리 공원" loading="lazy"><img src="images/nakasu-yatai.jpg" alt="하카타의 포장마차(야타이)" loading="lazy"></div>
+          <div class="tx"><h4>오호리 공원 · 나카스 야타이</h4><p>평지라 걷기 편하고, 저녁엔 포장마차 거리</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">2</span><img src="images/dazaifu.jpg" alt="다자이후 텐만구 본전" loading="lazy"></div>
+          <div class="tx"><h4>다자이후 텐만구</h4><p><span class="warn">계단이 많은 곳(카마도 신사)은 피하는 편이 좋습니다.</span></p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">3</span><img src="images/yufuin.jpg" alt="유후다케가 보이는 유후인 거리" loading="lazy" style="object-position: center 25%"></div>
+          <div class="tx"><h4>유후인 거리 · 긴린코 호수</h4><p>온천 마을 산책</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">4</span><img src="images/beppu-umi-jigoku.jpg" alt="코발트빛 물에서 김이 오르는 벳푸 우미지고쿠" loading="lazy"></div>
+          <div class="tx"><h4>벳푸 지옥온천 순례</h4><p>색색의 온천 지대를 돌아보는 코스</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">02</span><h3>비행시간 · 항공권</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>비행시간</dt><dd>약 1시간 30분</dd></div>
+        <div><dt>저가항공</dt><dd>1인 왕복 약 15~25만원</dd></div>
+        <div><dt>대형항공사</dt><dd>1인 왕복 약 30~50만원</dd></div>
+        <div class="hl"><dt>4인 합계</dt><dd><b>약 60~100만원</b> (저가항공 기준)</dd></div>
+      </dl></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">03</span><h3>12월 초 날씨</h3></div>
+      <div class="weather">
+        <div class="wx"><div class="place">후쿠오카</div><div class="temps"><div class="t day"><span>낮</span><b>14°</b></div><div class="t night"><span>밤</span><b>6~7°</b></div></div><p class="memo">바닷바람이 셉니다.</p></div>
+        <div class="wx"><div class="place">벳푸·유후인</div><div class="temps"><div class="t day"><span>낮</span><b>10°</b></div><div class="t night"><span>밤</span><b>0°</b></div></div><p class="memo">산간이라 훨씬 춥습니다.</p></div>
+      </div>
+      <p class="note">후쿠오카 단풍은 간사이보다 약 1주일 늦어 12월 초가 절정입니다.</p>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">04</span><h3>숙박 · 교통</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>공항→시내</dt><dd>지하철로 5~10분. 세 후보 중 가장 가깝습니다.</dd></div>
+        <div><dt>도시 간 이동</dt><dd>하카타→유후인·벳푸 특급 또는 버스 약 2시간</dd></div>
+        <div><dt>숙소</dt><dd>후쿠오카 호텔 + 온천 료칸 1박</dd></div>
+        <div><dt>4인 객실</dt><dd>료칸 다다미 가족실 이용 가능</dd></div>
+      </dl></div>
+    </section>
+  </div>
+
+  <!-- ================= 도쿄 + 하코네 ================= -->
+  <div class="panel" role="tabpanel" id="p-tokyo" aria-labelledby="t-tokyo" style="--accent: var(--tokyo); --accent-soft: var(--tokyo-soft)" hidden>
+    <div class="hero">
+      <img src="images/lake-ashi-fuji.jpg" alt="아시 호수 너머로 보이는 눈 덮인 후지산과 하코네 신사 도리이">
+      <div class="hero-body">
+        <span class="hero-tag">볼거리 최다 · 일정 빠듯</span>
+        <h2>도쿄 + 하코네</h2>
+        <p>볼거리는 가장 많지만 환승과 이동이 많아 3박 4일엔 빠듯합니다.</p>
+        <div class="comfort">부모님 편의도 <span class="dots" role="img" aria-label="5점 만점에 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="k">비행시간</span><span class="v">약 2시간 30분</span></div>
+      <div class="stat"><span class="k">4인 항공권</span><span class="v">80~120만</span></div>
+      <div class="stat"><span class="k">숙소 이동</span><span class="v">1회 필요</span></div>
+    </div>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">01</span><h3>대표 관광지</h3></div>
+      <div class="spots">
+        <article class="spot">
+          <div class="ph"><span class="badge">1</span><img src="images/sensoji.jpg" alt="아사쿠사 센소지 본당 앞 참배객" loading="lazy"><img src="images/shibuya.jpg" alt="위에서 내려다본 시부야 스크램블 교차로" loading="lazy"></div>
+          <div class="tx"><h4>아사쿠사 센소지 · 시부야</h4><p>전통과 번화가를 하루에 볼 수 있습니다.</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">2</span><img src="images/meiji-jingu.jpg" alt="숲에 둘러싸인 메이지신궁 경내" loading="lazy"><img src="images/tokyo-tower.jpg" alt="도심 빌딩 사이로 솟은 도쿄타워" loading="lazy"></div>
+          <div class="tx"><h4>메이지신궁 · 도쿄타워</h4><p>숲길 산책과 야경</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">3</span><img src="images/owakudani.jpg" alt="유황 연기가 피어오르는 오와쿠다니 위를 지나는 로프웨이" loading="lazy"></div>
+          <div class="tx"><h4>하코네 오와쿠다니 · 로프웨이</h4><p>화산 지대의 유황 연기와 검은 달걀</p></div>
+        </article>
+        <article class="spot">
+          <div class="ph"><span class="badge">4</span><img src="images/lake-ashi-fuji.jpg" alt="아시 호수와 후지산" loading="lazy"></div>
+          <div class="tx"><h4>아시 호수 유람선</h4><p>맑은 날엔 호수 너머로 후지산</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">02</span><h3>비행시간 · 항공권</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>비행시간</dt><dd>약 2시간 20~30분</dd></div>
+        <div><dt>저가항공</dt><dd>1인 왕복 약 20~30만원</dd></div>
+        <div><dt>대형항공사</dt><dd>1인 왕복 약 35~60만원</dd></div>
+        <div class="hl"><dt>4인 합계</dt><dd><b>약 80~120만원</b> (저가항공 기준)</dd></div>
+      </dl></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">03</span><h3>12월 초 날씨</h3></div>
+      <div class="weather">
+        <div class="wx"><div class="place">도쿄</div><div class="temps"><div class="t day"><span>낮</span><b>14~15°</b></div><div class="t night"><span>밤</span><b>6~7°</b></div></div><p class="memo">맑은 날이 많습니다.</p></div>
+        <div class="wx"><div class="place">하코네</div><div class="temps"><div class="t day"><span>낮</span><b>10°</b></div><div class="t night"><span>밤</span><b>2°</b></div></div></div>
+      </div>
+      <p class="note">하코네에서는 후지산이 잘 보이는 시기입니다.</p>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num">04</span><h3>숙박 · 교통</h3></div>
+      <div class="card"><dl class="rows">
+        <div><dt>공항→시내</dt><dd>하네다 약 30분, 나리타 약 1시간</dd></div>
+        <div><dt>도시 간 이동</dt><dd>신주쿠→하코네 로망스카 약 85분</dd></div>
+        <div><dt>숙소</dt><dd>도쿄와 하코네 숙소를 옮겨야 합니다.</dd></div>
+        <div><dt>4인 객실</dt><dd>도쿄는 방이 작아 2실 권장</dd></div>
+      </dl></div>
+      <p class="note">하코네는 로프웨이·배·버스 환승이 많아 프리패스를 쓰면 편합니다.</p>
+    </section>
+  </div>
+
+  <!-- ================= 비교 ================= -->
+  <div class="panel" role="tabpanel" id="p-compare" aria-labelledby="t-compare" hidden>
+    <section class="block" style="margin-top: 14px">
+      <div class="sec-head"><span class="num" style="color: var(--muted)">SUMMARY</span><h3>한눈에 보기</h3></div>
+      <div class="cities">
+        <button class="city" type="button" data-go="t-osaka" style="--c: var(--osaka)">
+          <img src="images/kiyomizu.jpg" alt="" loading="lazy">
+          <div class="in"><h4>오사카 + 교토</h4><ul>
+            <li>비행 <b>약 2시간</b> · 4인 <b>60~100만</b></li>
+            <li>숙소 <b>한 곳에 계속</b></li>
+            <li>편의도 <b>★★★★★</b></li>
+          </ul><span class="go">자세히 보기 →</span></div>
+        </button>
+        <button class="city" type="button" data-go="t-fukuoka" style="--c: var(--fukuoka)">
+          <img src="images/beppu-umi-jigoku.jpg" alt="" loading="lazy">
+          <div class="in"><h4>후쿠오카 + 벳푸·유후인</h4><ul>
+            <li>비행 <b>약 1시간 30분</b> · 4인 <b>60~100만</b></li>
+            <li>숙소 <b>호텔 + 료칸 1박</b></li>
+            <li>편의도 <b>★★★★☆</b></li>
+          </ul><span class="go">자세히 보기 →</span></div>
+        </button>
+        <button class="city" type="button" data-go="t-tokyo" style="--c: var(--tokyo)">
+          <img src="images/tokyo-tower.jpg" alt="" loading="lazy">
+          <div class="in"><h4>도쿄 + 하코네</h4><ul>
+            <li>비행 <b>약 2시간 30분</b> · 4인 <b>80~120만</b></li>
+            <li>숙소 <b>이동 필요</b></li>
+            <li>편의도 <b>★★★☆☆</b></li>
+          </ul><span class="go">자세히 보기 →</span></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num" style="color: var(--muted)">TABLE</span><h3>상세 비교표</h3></div>
+      <p class="swipe-hint">← 표를 좌우로 밀어서 보세요 →</p>
+      <div class="scroll" tabindex="0" aria-label="후보지 비교표, 좌우로 스크롤">
+        <table class="cmp">
+          <thead>
+            <tr><th scope="col"></th><th scope="col" class="o">오사카+교토</th><th scope="col" class="f">후쿠오카+벳푸·유후인</th><th scope="col" class="t">도쿄+하코네</th></tr>
+          </thead>
+          <tbody>
+            <tr class="group"><th scope="rowgroup">항공</th><td></td><td></td><td></td></tr>
+            <tr><th scope="row">비행시간</th><td>약 1시간 50분~2시간</td><td>약 1시간 30분</td><td>약 2시간 20~30분</td></tr>
+            <tr><th scope="row">저가항공</th><td>15~25만원</td><td>15~25만원</td><td>20~30만원</td></tr>
+            <tr><th scope="row">대형항공사</th><td>35~70만원</td><td>30~50만원</td><td>35~60만원</td></tr>
+            <tr><th scope="row">4인 합계</th><td>60~100만원</td><td>60~100만원</td><td>80~120만원</td></tr>
+            <tr class="group"><th scope="rowgroup">날씨 (낮/밤)</th><td></td><td></td><td></td></tr>
+            <tr><th scope="row">도시</th><td>오사카 13~14도 / 5~6도<br>교토 13도 / 3도</td><td>후쿠오카 14도 / 6~7도</td><td>도쿄 14~15도 / 6~7도</td></tr>
+            <tr><th scope="row">온천 지역</th><td>해당 없음</td><td>벳푸·유후인 10도 / 0도</td><td>하코네 10도 / 2도</td></tr>
+            <tr class="group"><th scope="rowgroup">관광</th><td></td><td></td><td></td></tr>
+            <tr><th scope="row">대표</th><td>오사카성, 기요미즈데라, 아라시야마, 나라</td><td>오호리 공원, 다자이후, 유후인, 지옥온천</td><td>센소지, 시부야, 메이지신궁, 오와쿠다니</td></tr>
+            <tr><th scope="row">단풍</th><td>11월 하순~12월 초 절정</td><td>12월 초 절정</td><td>도쿄는 11월 하순 위주</td></tr>
+            <tr class="group"><th scope="rowgroup">숙박·교통</th><td></td><td></td><td></td></tr>
+            <tr><th scope="row">공항→시내</th><td>약 40분</td><td>5~10분</td><td>30분~1시간</td></tr>
+            <tr><th scope="row">도시 간</th><td>JR 약 30분</td><td>특급·버스 약 2시간</td><td>로망스카 약 85분</td></tr>
+            <tr><th scope="row">숙소</th><td>한 곳에 계속 머묾</td><td>호텔 + 료칸 1박</td><td>숙소 이동 필요</td></tr>
+            <tr><th scope="row">4인 객실</th><td>패밀리룸 또는 2실</td><td>다다미 가족실 가능</td><td>2실 권장</td></tr>
+            <tr><th scope="row">편의도</th><td>5점 중 5점</td><td>5점 중 4점</td><td>5점 중 3점</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="num" style="color: var(--muted)">PICK</span><h3>이런 가족에게 추천</h3></div>
+      <div class="verdict">
+        <div style="--c: var(--osaka)"><b>이동 부담이 적은 쪽</b>오사카+교토. 숙소를 옮기지 않아도 됩니다.</div>
+        <div style="--c: var(--fukuoka)"><b>온천과 여유를 원한다면</b>후쿠오카+벳푸·유후인. 비행이 가장 짧습니다.</div>
+        <div style="--c: var(--tokyo)"><b>볼거리를 많이 보고 싶다면</b>도쿄+하코네. 3박 4일이면 일정이 빠듯합니다.</div>
+      </div>
+    </section>
+  </div>
+  </main>
+
+  <footer>
+    <p>항공권 가격은 일반적인 범위를 기준으로 한 추정치입니다. 12월 첫째 주 실제 요금은 출발일을 넣어 확인하세요. 날씨는 평년 기준이며, 단풍 시기는 해마다 달라집니다.</p>
+    <details class="credits">
+      <summary>사진 출처 (Wikimedia Commons)</summary>
+      <ul>
+        <li>아라시야마 단풍 — <a href="https://commons.wikimedia.org/wiki/File:Arashiyama,_Part_II_-_Arashiyama7534.jpg">Commons 원본</a></li>
+        <li>오사카성 — 663highland, CC BY 2.5, <a href="https://commons.wikimedia.org/wiki/File:Osaka_Castle_01bs3200.jpg">원본</a></li>
+        <li>도톤보리 — Type specimen, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Ebisu_Bridge.jpg">원본</a></li>
+        <li>기요미즈데라 — Jordy Meow, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Kiyomizu.jpg">원본</a></li>
+        <li>아라시야마 대나무 숲 — <a href="https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg">Commons 원본</a></li>
+        <li>후시미이나리 — Basile Morin, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg">원본</a></li>
+        <li>나라 공원 — Feri88, CC BY 3.0, <a href="https://commons.wikimedia.org/wiki/File:Nara_Park_-_panoramio_(2).jpg">원본</a></li>
+        <li>오호리 공원 — Tzuhsun Hsu, CC BY-SA 2.0, <a href="https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E6%BF%A0%E5%85%AC%E5%9C%92_(3360365578).jpg">원본</a></li>
+        <li>하카타 야타이 — <a href="https://commons.wikimedia.org/wiki/File:Fukuoka_Hakata_Yatai_the_parking_lot_Reisenmachi_Hakata-ku_Fukuoka_20240122.jpg">Commons 원본</a></li>
+        <li>다자이후 텐만구 — Jakub Hałun, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:20100719_Dazaifu_Tenmangu_Shrine_3328.jpg">원본</a></li>
+        <li>유후인 — Tomo, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:Yufuin_and_Mount_Yufu.jpg">원본</a></li>
+        <li>벳푸 우미지고쿠 — Totti, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:180131_Umi-Jigoku.jpg">원본</a></li>
+        <li>센소지 — <a href="https://commons.wikimedia.org/wiki/File:Sensoji_2023.jpg">Commons 원본</a></li>
+        <li>시부야 교차로 — <a href="https://commons.wikimedia.org/wiki/File:Shibuya_Crossing,_Aerial.jpg">Commons 원본</a></li>
+        <li>메이지신궁 — <a href="https://commons.wikimedia.org/wiki/File:Meiji_Jingu_2023-3.jpg">Commons 원본</a></li>
+        <li>도쿄타워 — <a href="https://commons.wikimedia.org/wiki/File:Tokyo_Tower_2023.jpg">Commons 원본</a></li>
+        <li>오와쿠다니 로프웨이 — <a href="https://commons.wikimedia.org/wiki/File:Owakudani_-_Hakone_(27369344357).jpg">Commons 원본</a></li>
+        <li>아시 호수와 후지산 — <a href="https://commons.wikimedia.org/wiki/File:LakeAshi_and_MtFuji_Hakone.JPG">Commons 원본</a></li>
+      </ul>
+      <p style="margin-top:8px">각 사진의 저작권은 원저작자에게 있으며, 라이선스 조건은 링크된 원본 페이지를 따릅니다. 화면에 맞게 크기만 줄였습니다.</p>
+    </details>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    var bar = document.querySelector('.tabs-bar');
+    function show(id, scroll) {
+      tabs.forEach(function (t) {
+        var on = t.id === id;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !on;
+      });
+      if (scroll && bar.getBoundingClientRect().top <= 0) {
+        var y = bar.offsetTop;
+        window.scrollTo({ top: y });
+      }
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(t.id, true); });
+      t.addEventListener('keydown', function (e) {
+        var n = null;
+        if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+        if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (n) { e.preventDefault(); n.focus(); show(n.id, true); }
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function (b) {
+      b.addEventListener('click', function () {
+        show(b.getAttribute('data-go'), false);
+        window.scrollTo({ top: bar.offsetTop });
+      });
+    });
+    show('t-osaka', false);
+  })();
+</script>
+</body>
+</html>
